@@ -17,21 +17,21 @@ void AreaCalculator::SortDescending2(long double* a, long double* b) {
 }
 
 void AreaCalculator::SortDescending3(long double* a,
- long double* b, long double* c) {
+  long double* b, long double* c) {
     SortDescending2(a, b);
     SortDescending2(b, c);
     SortDescending2(a, b);
 }
 
 long double AreaCalculator::KahanAreaOfTriangle(long double a,
- long double b, long double c) {
+  long double b, long double c) {
     SortDescending3(&a, &b, &c);
     return 0.25 * std::sqrt((a + (b + c)) * (c - (a - b)) * (c + (a - b)) *
         (a + (b - c)));
 }
 
 long double AreaCalculator::AreaOfIntersection(const Circle& c1,
- const Circle& c2) {
+  const Circle& c2) {
     long double R = c1.r;
     long double r = c2.r;
     long double d = std::hypot(c2.x - c1.x, c2.y - c1.y);

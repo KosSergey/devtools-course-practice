@@ -7,7 +7,7 @@
 TEST(AreaCalculatorTest, AreaOfIntersectionWorks) {
     Circle c1;
     Circle c2;
-    ASSERT_NO_THROW(AreaCalculator::AreaOfIntersection(c1,c2));
+    ASSERT_NO_THROW(AreaCalculator::AreaOfIntersection(c1, c2));
 }
 
 TEST(AreaCalculatorTest, non_intersections_circles_return_0) {
