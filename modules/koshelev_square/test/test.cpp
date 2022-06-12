@@ -1,7 +1,7 @@
 // Copyright 2022 Koshelev Sergey
-#include <cmath>
 #include <gtest/gtest.h>
 #include <vector>
+#include <cmath>
 #include "include/square.h"
 
 TEST(AreaCalculatorTest, AreaOfIntersectionWorks) {
@@ -32,8 +32,8 @@ TEST(AreaCalculatorTest, matching_circles) {
     c2.y = 1;
     c2.r = 2;
     long double area = AreaCalculator::Pi() * AreaCalculator::Square(c1.r);
-    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)*100)/100,
-    std::round(area*100)/100);
+    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)
+    *100)/100, std::round(area*100)/100);
 }
 
 TEST(AreaCalculatorTest, matching_circles2) {
@@ -46,8 +46,8 @@ TEST(AreaCalculatorTest, matching_circles2) {
     c2.y = 1;
     c2.r = 2;
     long double area = AreaCalculator::Pi() * AreaCalculator::Square(c2.r);
-    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)*100)/100,
-    std::round(area*100)/100);
+    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)
+    *100)/100, std::round(area*100)/100);
 }
 
 TEST(AreaCalculatorTest, second_circle_in_first) {
@@ -60,8 +60,8 @@ TEST(AreaCalculatorTest, second_circle_in_first) {
     c2.y = 1;
     c2.r = 2;
     long double area = AreaCalculator::Pi() * AreaCalculator::Square(c1.r);
-    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)*100)/100,
-    std::round(area*100)/100);
+    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)
+    *100)/100, std::round(area*100)/100);
 }
 
 TEST(AreaCalculatorTest, intersected_circles) {
