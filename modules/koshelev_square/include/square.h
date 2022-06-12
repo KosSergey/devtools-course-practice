@@ -16,9 +16,9 @@ struct Circle {
 
 class AreaCalculator {
  private:
-     static void SortDescending2(long double& a, long double& b);
-     static void SortDescending3(long double& a, long double& b,
-         long double& c);
+     static void SortDescending2(long double* a, long double* b);
+     static void SortDescending3(long double* a, long double* b,
+         long double* c);
      static long double KahanAreaOfTriangle(long double a,
          long double b, long double c);
 

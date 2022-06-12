@@ -9,20 +9,20 @@ long double AreaCalculator::Square(long double x) {
     return x * x;
 }
 
-void AreaCalculator::SortDescending2(long double& a, long double& b) {
+void AreaCalculator::SortDescending2(long double* a, long double* b) {
     if (a < b) {
-        std::swap(a, b);
+        std::swap(*a, *b);
     }
 }
 
-void AreaCalculator::SortDescending3(long double& a, long double& b, long double& c) {
+void AreaCalculator::SortDescending3(long double* a, long double* b, long double* c) {
     SortDescending2(a, b);
     SortDescending2(b, c);
     SortDescending2(a, b);
 }
 
 long double AreaCalculator::KahanAreaOfTriangle(long double a, long double b, long double c) {
-    SortDescending3(a, b, c);
+    SortDescending3(&a, &b, &c);
     return 0.25 * std::sqrt((a + (b + c)) * (c - (a - b)) * (c + (a - b)) *
         (a + (b - c)));
 }
@@ -35,7 +35,7 @@ long double AreaCalculator::AreaOfIntersection(const Circle& c1, const Circle& c
     if (R + r <= d) {
         return 0;
     }
-    SortDescending2(R, r);
+    SortDescending2(&R, &r);
     if (d <= R - r) {
         return Pi() * Square(r);
     }
@@ -44,6 +44,6 @@ long double AreaCalculator::AreaOfIntersection(const Circle& c1, const Circle& c
     long double A = std::asin(y / R) * Square(R);
     long double a = std::asin(y / r);
     a *= Square(r);
-    SortDescending2(A, a);
+    SortDescending2(&A, &a);
     return (A - area) + a;
 }

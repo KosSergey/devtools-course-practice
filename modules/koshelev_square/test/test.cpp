@@ -48,19 +48,6 @@ TEST(AreaCalculatorTest, matching_circles2) {
     ASSERT_DOUBLE_EQ(AreaCalculator::AreaOfIntersection(c1, c2), area);
 }
 
-TEST(AreaCalculatorTest, first_circle_in_second) {
-    Circle c1;
-    c1.x = 1;
-    c1.y = 1;
-    c1.r = 2;
-    Circle c2;
-    c2.x = 1;
-    c2.y = 1;
-    c2.r = 1;
-    long double area = AreaCalculator::Pi() * AreaCalculator::Square(c2.r);
-    ASSERT_DOUBLE_EQ(AreaCalculator::AreaOfIntersection(c1, c2), area);
-}
-
 TEST(AreaCalculatorTest, second_circle_in_first) {
     Circle c1;
     c1.x = 1;
