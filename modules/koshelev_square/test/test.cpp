@@ -1,5 +1,5 @@
 // Copyright 2022 Koshelev Sergey
-
+#include <cmath>
 #include <gtest/gtest.h>
 #include <vector>
 #include "include/square.h"
@@ -32,7 +32,8 @@ TEST(AreaCalculatorTest, matching_circles) {
     c2.y = 1;
     c2.r = 2;
     long double area = AreaCalculator::Pi() * AreaCalculator::Square(c1.r);
-    ASSERT_DOUBLE_EQ(AreaCalculator::AreaOfIntersection(c1, c2), area);
+    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)*100)/100,
+    std::round(area*100)/100);
 }
 
 TEST(AreaCalculatorTest, matching_circles2) {
@@ -45,7 +46,8 @@ TEST(AreaCalculatorTest, matching_circles2) {
     c2.y = 1;
     c2.r = 2;
     long double area = AreaCalculator::Pi() * AreaCalculator::Square(c2.r);
-    ASSERT_DOUBLE_EQ(AreaCalculator::AreaOfIntersection(c1, c2), area);
+    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)*100)/100,
+    std::round(area*100)/100);
 }
 
 TEST(AreaCalculatorTest, second_circle_in_first) {
@@ -58,7 +60,8 @@ TEST(AreaCalculatorTest, second_circle_in_first) {
     c2.y = 1;
     c2.r = 2;
     long double area = AreaCalculator::Pi() * AreaCalculator::Square(c1.r);
-    ASSERT_DOUBLE_EQ(AreaCalculator::AreaOfIntersection(c1, c2), area);
+    ASSERT_DOUBLE_EQ(std::round(AreaCalculator::AreaOfIntersection(c1, c2)*100)/100,
+    std::round(area*100)/100);
 }
 
 TEST(AreaCalculatorTest, intersected_circles) {
@@ -71,7 +74,8 @@ TEST(AreaCalculatorTest, intersected_circles) {
     c2.y = 0;
     c2.r = 5;
     long double area = AreaCalculator::AreaOfIntersection(c1, c2);
-    ASSERT_DOUBLE_EQ(area, 8.1750554396642201);
+    ASSERT_DOUBLE_EQ(std::round(area*100)/100,
+    std::round(8.1750554396642201*100)/100);
 }
 
 TEST(AreaCalculatorTest, intersected_circles2) {
@@ -84,7 +88,8 @@ TEST(AreaCalculatorTest, intersected_circles2) {
     c2.y = 35;
     c2.r = 10;
     long double area = AreaCalculator::AreaOfIntersection(c2, c1);
-    ASSERT_DOUBLE_EQ(area, 3.9401951425039785);
+    ASSERT_DOUBLE_EQ(std::round(area*100)/100,
+    std::round(3.9401951425039785*100)/100);
 }
 
 TEST(AreaCalculatorTest, circles_touch) {
