@@ -84,7 +84,7 @@ TEST(AreaCalculatorTest, intersected_circles2) {
     c2.y = 35;
     c2.r = 10;
     long double area = AreaCalculator::AreaOfIntersection(c2, c1);
-    ASSERT_DOUBLE_EQ(area, 3.9401951425039847);
+    ASSERT_DOUBLE_EQ(area, 3.9401951425039785);
 }
 
 TEST(AreaCalculatorTest, circles_touch) {
